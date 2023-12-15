@@ -28,7 +28,7 @@ RSpec.describe Part, type: :model do
 
     it 'objeto part invalido com campos obrigatorios não preenchidos?' do
       part = Part.new
-      expect(part).to be_valid
+      expect(part).to be_invalid
     end
 
   end
