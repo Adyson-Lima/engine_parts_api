@@ -1,6 +1,6 @@
 class Api::V1::PartsController < ApplicationController
 
-  before_action :set_part, only: %i[show update] # show update destroy
+  before_action :set_part, only: %i[show update destroy] # show update destroy
 
   def index
     @parts = Part.all 
@@ -26,6 +26,10 @@ class Api::V1::PartsController < ApplicationController
     else
       render json: @part.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @part.destroy!
   end
 
 private
