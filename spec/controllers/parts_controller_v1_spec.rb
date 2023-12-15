@@ -20,4 +20,12 @@ RSpec.describe Api::V1::PartsController, type: :controller do
     end
   end
 
+  describe 'POST /api/v1/parts' do
+    it 'Consegue criar um part e retornar status 201?' do
+      post :create, params: {part: {name: 'biela', function: 'conectar pistão eixo'}, format: :json}
+      expect(response.body).to include_json(name: 'biela')
+      expect(response).to have_http_status(201)
+    end
+  end
+
 end
