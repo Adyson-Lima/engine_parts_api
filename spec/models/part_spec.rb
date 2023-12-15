@@ -7,7 +7,7 @@ RSpec.describe Part, type: :model do
   describe 'Testes de preenchimento do mocel Part' do
 
     it 'name consegue ser preenchido?' do
-      @part.name = ''
+      @part.name = 'cabeçote'
       expect(@part.name).to eq('cabeçote')
     end
 
