@@ -11,6 +11,11 @@ RSpec.describe Part, type: :model do
       expect(@part.name).to eq('cabeçote')
     end
 
+    it 'function consegue ser preenchido?' do
+      @part.function = ''
+      expect(@part.function).to eq('sustentação dos pistões')
+    end
+
   end
 
 end
