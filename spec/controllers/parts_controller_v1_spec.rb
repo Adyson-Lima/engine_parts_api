@@ -28,4 +28,13 @@ RSpec.describe Api::V1::PartsController, type: :controller do
     end
   end
 
+  describe 'PATCH /api/v1/parts/id' do
+    it 'Consegue atualizar um part e retornar status 200?' do
+      part = Part.last
+      patch :update, params: {part: {name: 'eletroventilador', function: 'refrigerar o radiador'}, id: part.id}
+      expect(response.body).to include_json(name: 'eletroventilador')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
