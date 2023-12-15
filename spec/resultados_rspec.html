@@ -286,15 +286,40 @@ a {
 </div>
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_2" class="passed">Testes de preenchimento do mocel Part</dt>
-    <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.02748s</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">function consegue ser preenchido?</span><span class='duration'>0.00083s</span></dd>
+  <dt id="example_group_2" class="passed">Testes de preenchimento do model Part</dt>
+    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.03030s</span></dd>
+    <script type="text/javascript">moveProgressBar('66.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">function consegue ser preenchido?</span><span class='duration'>0.00104s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.03046 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "2 examples, 0 failures";</script>
+<div id="div_group_3" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_3" class="passed">Testes de validação do model Part</dt>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_3');</script>
+    <script type="text/javascript">makeRed('example_group_3');</script>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">objeto part valido com campos obrigatorios preenchidos?</span>
+      <span class="duration">2.30998s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: expect(@part).to be_valid
+    expected #&lt;Part id: nil, name: &quot;&quot;, function: &quot;&quot;, created_at: nil, updated_at: nil&gt; to be valid, but got errors: Name can&#39;t be blank, Function can&#39;t be blank
+  # ./spec/models/part_spec.rb:26:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/models/part_spec.rb:26:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">24</span>      @part.name = ''
+<span class="linenum">25</span>      @part.function = ''
+<span class="offending"><span class="linenum">26</span>      expect(@part).to be_valid</span>
+<span class="linenum">27</span>    end
+<span class="linenum">28</span>
+<span class="linenum">29</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>2.35306 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "3 examples, 1 failure";</script>
 </div>
 </div>
 </body>
