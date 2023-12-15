@@ -37,4 +37,13 @@ RSpec.describe Api::V1::PartsController, type: :controller do
     end
   end
 
+  describe 'DELETE /api/v1/parts/id' do
+    it 'Consegue excluir um part e retornar status 204?' do
+      part = Part.last
+      delete :destroy, params: {id: part.id}
+      expect(Part.all).not_to include(part)
+      expect(response).to have_http_status(204) 
+    end
+  end
+
 end
