@@ -21,8 +21,8 @@ RSpec.describe Part, type: :model do
   describe 'Testes de validação do model Part' do
 
     it 'objeto part valido com campos obrigatorios preenchidos?' do
-      @part.name = ''
-      @part.function = ''
+      @part.name = 'pistão'
+      @part.function = 'atuar na compressão dos gases'
       expect(@part).to be_valid
     end
 
