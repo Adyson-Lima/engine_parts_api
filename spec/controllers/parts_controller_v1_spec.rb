@@ -12,4 +12,12 @@ RSpec.describe Api::V1::PartsController, type: :controller do
     end
   end
 
+  describe 'GET /api/v1/parts/id' do
+    it 'Consegue listar um part especifico e retornar status 200?' do
+      get :show, params: {id: @part.id}
+      expect(response.body).to include_json(name: 'alternador')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
