@@ -11,6 +11,15 @@ class Api::V1::PartsController < ApplicationController
     render json: @part
   end
 
+  def create
+    @part = Part.new(part_params)
+    if @part.save
+      render json: @part, status: :created, location: api_v1_part_url(@part)
+    else
+      render json: @part.errors, status: :unprocessable_entity
+    end
+  end
+
 private
 
 def set_part
