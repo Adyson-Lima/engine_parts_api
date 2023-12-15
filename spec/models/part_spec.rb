@@ -12,7 +12,7 @@ RSpec.describe Part, type: :model do
     end
 
     it 'function consegue ser preenchido?' do
-      @part.function = ''
+      @part.function = 'sustentação dos pistões'
       expect(@part.function).to eq('sustentação dos pistões')
     end
 
